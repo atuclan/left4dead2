@@ -7,4 +7,4 @@ WORKDIR /server/
 COPY server /server.skeleton/
 COPY --chmod=0755 entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT [ "/bin/sh", "-c", ""]
+ENTRYPOINT [ "/entrypoint.sh" ]
