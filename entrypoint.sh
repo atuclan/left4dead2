@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-steamcmd +force_install_dir ~/server/ +login anonymous +app_update 222860 validate +exit
+steamcmd +force_install_dir /server/ +login anonymous +app_update 222860 validate +exit
 
 rm -rf /server/left4dead2/addons/
 rm -rf /server/left4dead2/cfg/server.cfg
