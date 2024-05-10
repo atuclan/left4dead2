@@ -21,7 +21,7 @@ ENV LANGUAGE 'en_US:en'
 RUN ln -s /usr/games/steamcmd /usr/bin/steamcmd
 
 ENV USER steam
-ENV HOME /home/steam/
+ENV HOME /home/steam
 
 USER steam
 
@@ -30,10 +30,10 @@ RUN steamcmd +quit
 
 # Fix missing directories and libraries
 RUN mkdir -p $HOME/.steam \
- && ln -s $HOME/.local/share/Steam/steamcmd/linux32 $HOME/.steam/sdk32 \
- && ln -s $HOME/.local/share/Steam/steamcmd/linux64 $HOME/.steam/sdk64 \
- && ln -s $HOME/.steam/sdk32/steamclient.so $HOME/.steam/sdk32/steamservice.so \
- && ln -s $HOME/.steam/sdk64/steamclient.so $HOME/.steam/sdk64/steamservice.so
+ && ln -sf $HOME/.local/share/Steam/steamcmd/linux32 $HOME/.steam/sdk32 \
+ && ln -sf $HOME/.local/share/Steam/steamcmd/linux64 $HOME/.steam/sdk64 \
+ && ln -sf $HOME/.steam/sdk32/steamclient.so $HOME/.steam/sdk32/steamservice.so \
+ && ln -sf $HOME/.steam/sdk64/steamclient.so $HOME/.steam/sdk64/steamservice.so
 
 # Set working directory
 WORKDIR /server/
